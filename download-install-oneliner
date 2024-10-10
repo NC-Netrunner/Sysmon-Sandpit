@@ -1,0 +1,6 @@
+# NOTES
+# This one liner was written at the time of Sysmon v13.24, therefore the download is written to a folder named Sysmon-v1324
+# If you do not want to archive your sysmon downloads, uncomment the final command at the end of the one liner in order to completely clean up after install.
+# I recommend checking the version of Sysmon you are downloading and naming the directory appropriately; i.e. "Sysmon-v<xxxx>"
+
+Invoke-WebRequest https://download.sysinternals.com/files/Sysmon.zip -OutFile C:\Path\To\Directory\Sysmon-v1324.zip; Expand-Archive C:\Path\To\Directory\Sysmon-v1324.zip; Invoke-WebRequest https://raw.githubusercontent.com/ClearedZac/sysmon-config/master/sysmonconfig-export.xml -OutFile C:\Path\To\Directory\Sysmon-v1324\sysmonconfig-export.xml; C:\Path\To\Directory\Sysmon-v1324\Sysmon.exe -accepteula -i C:\Path\To\Directory\Sysmon-v1324\sysmonconfig-export.xml; Remove-Item C:\Path\To\Directory\Sysmon-v1324.zip#; Remove-Item C:\Path\To\Directory\Sysmon-v1324\ -Recurse *REMOVE THIS IF U DONT WANT TO ARCHIVE SYSMON VERSIONS*
